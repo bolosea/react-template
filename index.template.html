@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="html5,css3,react, redux, react-router">
+    <meta name="author" content="wangyuegyq">
+	<title><%= htmlWebpackPlugin.options.title %></title>
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="stylesheet" href="/reset/reset.css">
+	<% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link href="/<%=htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+    <% } %>
+</head>
+<body>
+	<div id="app"></div>
+	<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+	<script type="text/javascript" src="/<%=htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+	<% } %>
+</body>
+</html>
